@@ -7,4 +7,8 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .post('/chat', function (req, res){
+	res.render('Key: ' + req.body.key);
+	}
+  )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

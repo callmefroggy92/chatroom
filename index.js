@@ -14,11 +14,10 @@ app
 	console.log(req.body);
 	res.write('<html>');
 	res.write('<head>');
-	res.write('<script> function tst(){ window.alert("test"); } </script>');
+	res.write('<script> var i = ' + req.body.keycode + '; </script>');
+	res.write('</head>');
 	res.write('<body>');
-	res.write('<h1> Key: ' + req.body.keycode + '</h1>');
-	res.write('test');
-	res.write('<button onclick="tst()"> TEST </button>');
+	res.write('<h1> Chatroom ID: ' + req.body.chatroom + '</h1>');
 	res.write('</body></html');
 	res.end();
 	}

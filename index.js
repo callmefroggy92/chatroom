@@ -10,7 +10,7 @@ app
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .get('/chat', function (req, res){
+  .post('/chat', function (req, res){
 	console.log(req.body);
 	res.send('Key: ' + req.body.keycode);
 	}

@@ -8,6 +8,7 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){
+	console.log(req.body);
 	res.send('Key: ' + req.body.key);
 	}
   )

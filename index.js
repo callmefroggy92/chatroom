@@ -16,7 +16,7 @@ app
 	res.write('<head>');
 	res.write('<script>
 		function tst(){
-			window.alert("test");
+			window.alert();
 		}
 		</script>');
 	res.write('<body>');

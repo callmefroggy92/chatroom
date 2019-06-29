@@ -12,8 +12,18 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){
 	console.log(req.body);
+	res.write('<html>');
+	res.write('<head>');
+	res.write('<script>
+		function tst(){
+			window.alert("test");
+		}
+		</script>');
+	res.write('<body>');
 	res.write('<h1> Key: ' + req.body.keycode + '</h1>');
 	res.write('test');
+	res.write('<button onclick="tst()">TEST</button>');
+	res.write('</body></html');
 	res.end();
 	}
   )

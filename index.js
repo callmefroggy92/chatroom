@@ -1,8 +1,8 @@
-const express = require('express');
-const path = require('path');
-const PORT = process.env.PORT || 5000;
-app.use(express.json());       
-app.use(express.urlencoded()); 
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
+app.use(express.json())       
+app.use(express.urlencoded()) 
 
 express()
   .use(express.static(path.join(__dirname, 'public')))

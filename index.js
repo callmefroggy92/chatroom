@@ -12,7 +12,7 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){
 	console.log(req.body);
-	res.send('Key: ' + req.body.keycode);
+	res.send('<h1> Key: ' + req.body.keycode + '</h1>');
 	}
   )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

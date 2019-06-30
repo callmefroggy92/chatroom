@@ -12,14 +12,7 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){
 	console.log(req.body);
-	res.write('<html>');
-	res.write('<head>');
-	res.write('<script> var i = ' + req.body.keycode + '; </script>');
-	res.write('</head>');
-	res.write('<body>');
-	res.write('<h1> Chatroom ID: ' + req.body.chatroom + '</h1>');
-	res.write('</body></html');
-	res.end();
+	res.sendFile('pages/chatroom');
 	}
   )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

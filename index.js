@@ -11,8 +11,10 @@ app
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){
-	console.log(req.body);
-	res.sendFile('pages/chatroom');
+	console.log(req.body);      
+	res.sendFile('chatroom.ejs', {
+        root: path.join(__dirname, './views/pages')
+    })
 	}
   )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

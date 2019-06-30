@@ -12,9 +12,8 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){
 	console.log(req.body);
-        res.sendFile('chat.html', {
-        	root: path.join(__dirname, './views/pages')
-    	})
+	app.locals.chatroom = req.body.chatroom;
+        res.render('pages/chatroom');
 	}
   )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

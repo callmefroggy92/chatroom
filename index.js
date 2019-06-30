@@ -19,14 +19,10 @@ var tst = "";
 client.query('SELECT * FROM messages;', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
-    tst = console.log(JSON.stringify(row));
+    tst = JSON.stringify(row);
   }
   client.end();
 });
-
-// const connectionString = process.env.DATABASE_URL || "postgres://cecltehghqyiaf:cc2311a1c616c5479c0c6f0baac59f7ab77bd60a06671cf6f6e839513e8b24ce@ec2-50-19-221-3?ssl=true"
-// const pool = new Pool({connectionString: connectionString});
-
 
 app
   .use(express.static(path.join(__dirname, 'public')))

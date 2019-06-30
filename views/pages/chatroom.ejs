@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+	<% include ../partials/header.ejs %>
+	<link rel="stylesheet" type="text/css" href="chat_style.css">
 </head>
 
 <body>
 
-	<p>
-		<%=chatroom %>
-	</p>
+	<h3>
+		The ID of this Chatroom is: <%=chatroom %>
+	</h3>
 
+	<div id="chatbox"> </div>
+
+	<textbox id="chat_text" hint="Type Your Message!" />
+	<button id="send_message"> SEND </button>
 </body>
 </html>

@@ -1,0 +1,10 @@
+body{
+	background-color:#CCC;
+}
+
+#chatbox{
+	width: 40%;
+	height: 50%;
+	border: 1pt solid black;
+	background-color: white;
+}

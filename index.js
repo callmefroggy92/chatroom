@@ -12,7 +12,6 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){
 	console.log(req.body);
-	res.write('ANOTHER TEST');
         res.sendFile('chat.html', {
         	root: path.join(__dirname, './views/pages')
     	})

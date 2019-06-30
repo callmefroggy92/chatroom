@@ -2,15 +2,31 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-</head>
+	<style>
+		body{
+			background-color: #CCC;
+		}
 
-<body>
+		#content{
+			padding:5%;
+			margin:5%;
+			width:60%;
+			height:100%;
+			background-color:white;
+			border: 1pt solid black;
+		}
+	</style>
+	</head>
 
-	<form action="chat" method="post">
-		<input type="text" placeholder="chatroom name" name="chatroom">
-		<input type="text" placeholder="key" name="keycode">
-		<input type="submit">
-	</form>
+	<body>
 
-</body>
+		<div id="content">
+			<h3> Enter your Chatroom ID below to begin! </h3>
+			<form action="chat" method="post">
+				<input type="text" placeholder="Enter the Chatroom ID" name="chatroom">
+				<input type="submit" text="Enter the Chat!">
+			</form>
+		</div>
+
+	</body>
 </html>

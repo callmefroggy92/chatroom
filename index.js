@@ -30,7 +30,6 @@ app
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .post('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){   
 	res.locals.chatroom = tst;
         res.render('pages/chatroom');

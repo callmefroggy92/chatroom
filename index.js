@@ -36,7 +36,18 @@ app
   })
 
   .post('/upd', function(req, res){
-	res.send("fooBAR!!");
+	var data = "";
+	client.connect(function(err) {
+		if (err) throw err;
+		console.log("Connected!");
+		var sql = "SELECT * FROM messages;";
+		client.query(sql, function (err, result) {
+		for (let row of res.rows) {
+			data += JSON.stringify(row);
+		}
+		});
+	});
+	res.send(data);
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

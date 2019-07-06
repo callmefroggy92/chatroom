@@ -37,15 +37,14 @@ app
 
   .post('/upd', function(req, res){
 	var data = "";
-	client.connect(function(err) {
-		if (err) throw err;
-		console.log("Connected!");
-		var sql = "SELECT * FROM messages;";
-		client.query(sql, function (err, result) {
+	client.connect();
+
+	client.query('SELECT * FROM messages;', (err, res) => {
+  		if (err) throw err;
 		for (let row of res.rows) {
 			data += JSON.stringify(row);
 		}
-		});
+		client.end();
 	});
 	res.send(data);
   })

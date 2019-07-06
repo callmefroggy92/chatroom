@@ -36,7 +36,7 @@ app
   })
 
   .post('/upd', function(req, res){
-	res.send("test");
+	res.send("fooBAR!!");
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

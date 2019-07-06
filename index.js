@@ -19,7 +19,7 @@ var tst = "";
 client.query('SELECT * FROM messages;', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
-    tst = JSON.stringify(row);
+    tst += JSON.stringify(row);
   }
   client.end();
 });

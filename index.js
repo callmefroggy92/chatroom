@@ -12,7 +12,7 @@ const client = new Client({
   ssl: true,
 });
 
-var test = "test";
+var tst = "test";
 
 app
   .use(express.static(path.join(__dirname, 'public')))

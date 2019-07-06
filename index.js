@@ -36,13 +36,16 @@ app
 	}
   )
   .post('/snd', function(req, res){
-	var qry = "INSERT INTO messages(msg, usr) VALUES (" + req.body.msg + ", " + req.body.usr + ");";
-	client.connect();
-	client.query(qry, (err, res) => {
+	var qry = "INSERT INTO messages(msg, usr) VALUES ('testmsg', 'testuser');";
+	client.connect(function(err) {
 		if (err) throw err;
-		client.end();	
+		console.log("Connected!");
+		var sql = "INSERT INTO messages (msg, usr) VALUES ('test message', 'test user')";
+		con.query(sql, function (err, result) {
+			if (err) throw err;
+			console.log("1 record inserted");
 		});
-	}
+});
   )
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

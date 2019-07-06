@@ -29,7 +29,7 @@ app
 	client.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		var sql = "INSERT INTO messages (msg, usr) VALUES ('test message', 'test user')";
+		var sql = "INSERT INTO messages (msg, usr) VALUES ('" + req.body.msg + "', '" + req.body.usr + "')";
 		client.query(sql, function (err, result) {
 			if (err) throw err;
 			console.log("1 record inserted");

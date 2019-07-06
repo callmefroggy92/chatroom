@@ -35,6 +35,11 @@ app
         res.render('pages/chatroom');
 	}
   )
+  .post('/snd', function(req, res){
+	var qry = "INSERT INTO messages(msg, usr) VALUES (" + req.body.msg + ", " + req.body.usr + "); ";
+	client.query(qry);
+	}
+  )
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 

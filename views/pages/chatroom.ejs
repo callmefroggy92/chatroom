@@ -16,6 +16,24 @@
 	}
 	</style>
 
+	<script src="jquery-3.4.1.min.js"></script>
+
+	<script>
+		$('#send_message').click(function() {
+		    $.ajax({
+		        url: 'snd',
+		        type: 'POST',
+		        data: {
+        		    msg: $('#msg').val(),
+		            usr: $('#usr').val()
+		        },
+		        success: function(msg) {
+		            alert('Email Sent');
+		        }               
+		    });
+		});
+	</script>
+
 </head>
 
 <body>
@@ -26,7 +44,8 @@
 
 	<div id="chatbox"> <%=chatroom %> </div>
 
-	<input type="text" id="chat_text" placeholder="Type Your Message!">
+	<input type="text" id="msg" placeholder="Type Your Message!">
+	<input type="text" id="usr" placeholder="Your Preferred Username">
 	<button id="send_message"> SEND </button>
 </body>
 </html>

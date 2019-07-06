@@ -12,6 +12,8 @@ const client = new Client({
   ssl: true,
 });
 
+client.connect();
+
 app
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -24,15 +26,11 @@ app
   )
   .post('/snd', function(req, res){
 	var qry = "INSERT INTO messages(msg, usr) VALUES ('testmsg', 'testuser');";
-	client.connect(function(err) {
-		if (err) throw err;
-		console.log("Connected!");
 		var sql = "INSERT INTO messages (msg, usr) VALUES ('" + req.body.msg + "', '" + req.body.usr + "')";
 		client.query(sql, function (err, result) {
 			if (err) throw err;
 			console.log("1 record inserted");
-		});
-	});
+			});
   })
 
   .post('/upd', function(req, res){

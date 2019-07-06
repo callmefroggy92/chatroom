@@ -46,7 +46,7 @@ app
 		}
 		client.end();
 	});
-	res.send(data);
+	res.send("dataaaaa");
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

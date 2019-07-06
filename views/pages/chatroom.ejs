@@ -32,17 +32,29 @@
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send(str);
 		}
+
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("chatbox").innerHTML =
+					this.responseText;
+				}
+			};
+			xhttp.open("POST", "/upd", true);
+			xhttp.send(); 
+		}
 	</script>
 
 </head>
 
-<body>
+<body onload="loadDoc()">
 
 	<h3>
 		The ID of this Chatroom is:
 	</h3>
 
-	<div id="chatbox"> <%=chatroom %> </div>
+	<div id="chatbox"> </div>
 
 	<input type="text" id="msg" placeholder="Type Your Message!">
 	<input type="text" id="usr" placeholder="Your Preferred Username">

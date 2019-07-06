@@ -12,15 +12,13 @@ const client = new Client({
   ssl: true,
 });
 
-var tst = "test";
-
 app
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .post('/chat', function (req, res){   
-	res.locals.chatroom = tst;
+	res.locals.chatroom = req.body.chatroom;
         res.render('pages/chatroom');
 	}
   )
@@ -35,6 +33,10 @@ app
 			console.log("1 record inserted");
 		});
 	});
+  })
+
+  .post('/upd', function(req, res){
+	res.send("test");
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

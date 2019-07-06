@@ -19,7 +19,7 @@
 	<script src="jquery-3.4.1.min.js"></script>
 
 	<script>
-		$('#send_message').click(function() {
+		function send_message(){
 		    $.ajax({
 		        url: 'snd',
 		        type: 'POST',
@@ -31,7 +31,7 @@
 		            alert('Email Sent');
 		        }               
 		    });
-		});
+		}
 	</script>
 
 </head>
@@ -46,6 +46,6 @@
 
 	<input type="text" id="msg" placeholder="Type Your Message!">
 	<input type="text" id="usr" placeholder="Your Preferred Username">
-	<button id="send_message"> SEND </button>
+	<button id="send_message" onclick="send_message()"> SEND </button>
 </body>
 </html>

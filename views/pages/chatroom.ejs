@@ -25,9 +25,12 @@
 				if (this.readyState == 4 && this.status == 200) {
 				}
 			};
+			var msg = document.getElementById('msg').value;
+			var usr = document.getElementById('usr').value;
+			var str = "msg=" + msg + "&usr=" + usr;
 			xhttp.open("POST", "/snd", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("msg=testmessage&lname=testuser");
+			xhttp.send(str);
 		}
 	</script>
 

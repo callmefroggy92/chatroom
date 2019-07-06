@@ -12,18 +12,7 @@ const client = new Client({
   ssl: true,
 });
 
-client.connect();
-
-var tst = "";
-
-client.query('SELECT * FROM messages;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    tst += JSON.stringify(row);
-  }
-  client.end();
-});
-
+var test = "test";
 
 app
   .use(express.static(path.join(__dirname, 'public')))

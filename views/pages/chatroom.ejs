@@ -20,18 +20,14 @@
 
 	<script>
 		function send_message(){
-			window.alert("sending message");
-		    $.ajax({
-		        url: 'snd',
-		        type: 'POST',
-		        data: {
-        		    msg: $('#msg').val(),
-		            usr: $('#usr').val()
-		        },
-		        success: function(msg) {
-		            alert('Email Sent');
-		        }               
-		    });
+			$.post("snd",
+			{
+				msg: "Donald Duck",
+				usr: "Duckburg"
+			},
+			function(data, status){
+				alert("Data: " + data + "\nStatus: " + status);
+			});
 		}
 	</script>
 

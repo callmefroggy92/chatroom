@@ -45,8 +45,8 @@ app
 			if (err) throw err;
 			console.log("1 record inserted");
 		});
-});
-  )
+	});
+  })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 

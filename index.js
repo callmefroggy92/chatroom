@@ -32,8 +32,6 @@ app
 			console.log("Record Successfully Inserted");
 		});
 	});
-
-	client.end();
   })
 
   .post('/upd', function(req, res){

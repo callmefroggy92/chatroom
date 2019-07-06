@@ -37,7 +37,6 @@ app
 
   .post('/upd', function(req, res){
 	var data = "empty string";
-
 	res.send(data);
   })
 

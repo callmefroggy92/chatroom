@@ -36,7 +36,7 @@ app
   })
 
   .post('/upd', function(req, res){
-	var data = "";
+	var data = "empty string";
 	client.connect();
 
 	client.query('SELECT * FROM messages;', (err, res) => {
@@ -46,7 +46,7 @@ app
 		}
 		client.end();
 	});
-	res.send("dataaaaa");
+	res.send("");
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

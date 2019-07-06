@@ -36,7 +36,7 @@ app
 	}
   )
   .post('/snd', function(req, res){
-	var qry = "INSERT INTO messages(msg, usr) VALUES (" + req.body.msg + ", " + req.body.usr + ";";
+	var qry = "INSERT INTO messages(msg, usr) VALUES (" + req.body.msg + ", " + req.body.usr + ");";
 	client.connect();
 	client.query(qry, (err, res) => {
 		if (err) throw err;

@@ -5,24 +5,6 @@ var app = express()
 app.use(express.json())       
 app.use(express.urlencoded()) 
 app.set('view engine', 'ejs');
-const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-var tst = "";
-
-client.query('SELECT * FROM messages;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    tst = JSON.stringify(row);
-  }
-  client.end();
-});
 
 app
   .use(express.static(path.join(__dirname, 'public')))

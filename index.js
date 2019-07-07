@@ -7,11 +7,6 @@ app.use(express.urlencoded())
 app.set('view engine', 'ejs');
 const { Client } = require('pg');
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
 app
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -23,6 +18,12 @@ app
 	}
   )
   .post('/snd', function(req, res){
+
+	var client = new Client({
+		connectionString: process.env.DATABASE_URL,
+		ssl: true,
+	});
+
 	client.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");

@@ -37,7 +37,7 @@ app
   })
 
   .post('/upd', function(req, res){
-	var data = "emtpy string";
+	var messages_string = "emtpy string";
 
 	const client = new Client({
 		connectionString: process.env.DATABASE_URL,
@@ -50,13 +50,13 @@ app
 		var sql = "SELECT msg, usr FROM messages;";
 		client.query(sql, function (err, result) {
 			if (err) throw err;
-			data = result;
-			console.log(data);
+			messages_string = result;
+			console.log(messages_string);
 			console.log("Record Successfully Retrieved");
 		});
 	});
 
-	res.send(data);
+	res.send(messages_string);
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

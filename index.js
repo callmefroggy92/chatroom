@@ -31,6 +31,7 @@ app
 			if (err) throw err;
 			console.log("Record Successfully Inserted");
 		});
+		client.end();
 	});
   })
 

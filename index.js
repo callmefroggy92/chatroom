@@ -37,7 +37,7 @@ app
   })
 
   .post('/upd', function(req, res){
-	var data = "";
+	var data = "emtpy string";
 
 	const client = new Client({
 		connectionString: process.env.DATABASE_URL,
@@ -47,10 +47,10 @@ app
 	client.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		var sql = "SELECT * FROM messages;";
+		var sql = "SELECT msg, usr FROM messages;";
 		client.query(sql, function (err, result) {
 			if (err) throw err;
-			data = JSON.stringify(result);
+			data = result;
 			console.log(data);
 			console.log("Record Successfully Retrieved");
 		});

@@ -37,7 +37,25 @@ app
   })
 
   .post('/upd', function(req, res){
-	var data = "empty string";
+	var data = "";
+
+	const client = new Client({
+		connectionString: process.env.DATABASE_URL,
+		ssl: true,
+	});
+
+	client.connect(function(err) {
+		if (err) throw err;
+		console.log("Connected!");
+		var sql = "SELECT * FROM messages;";
+		client.query(sql, function (err, result) {
+			if (err) throw err;
+			for (let row of res.rows) {
+				data += JSON.stringify(row);
+			}
+			console.log("Record Successfully Retrieved");
+		});
+	});
 	res.send(data);
   })
 

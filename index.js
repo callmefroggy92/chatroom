@@ -56,6 +56,7 @@ app
 			console.log("Record Successfully Retrieved");
 		});
 	});
+
 	res.send(data);
   })
 

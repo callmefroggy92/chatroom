@@ -51,6 +51,7 @@ app
 		client.query(sql, function (err, result, fields) {
 			if (err) throw err;
 			res.send(fields);
+			res.send(fields);
 			console.log("Record Successfully Retrieved");
 		});
 	});

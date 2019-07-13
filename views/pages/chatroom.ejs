@@ -27,8 +27,9 @@
 			};
 			var msg = document.getElementById('msg').value;
 			var usr = document.getElementById('usr').value;
+			var chatroom_id = document.getElementById('chatroom_id').value;
 			var d = new Date();
-			var str = "msg=" + msg + "&usr=" + usr + "&d=" + d.toString() + "&chatroom_id=test";
+			var str = "msg=" + msg + "&usr=" + usr + "&d=" + d.toString() + "&chatroom_id=" + chatroom_id;
 			xhttp.open("POST", "/snd", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send(str);
@@ -62,7 +63,7 @@
 <body onload="setInterval(loadDoc, 3000);">
 
 	<h3>
-		The ID of this Chatroom is: <input type="text" id="id" placeholder="<%= chatroom %>">
+		The ID of this Chatroom is: <input type="text" id="chatroom_id" placeholder="<%= chatroom %>">
 	</h3>
 
 	<div id="chatbox"> </div>

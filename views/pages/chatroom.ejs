@@ -27,7 +27,8 @@
 			};
 			var msg = document.getElementById('msg').value;
 			var usr = document.getElementById('usr').value;
-			var str = "msg=" + msg + "&usr=" + usr;
+			var d = new Date();
+			var str = "msg=" + msg + "&usr=" + usr + "&d=" + d.toString();
 			xhttp.open("POST", "/snd", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send(str);
@@ -51,7 +52,7 @@
 			var txt = "";
 			for(var row in msgJSON){
 				if(msgJSON.hasOwnProperty(row)){
-					txt += msgJSON[row].usr + " : " + msgJSON[row].msg + "\n";
+					txt += msgJSON[row].usr + " : " + msgJSON[row].msg + "<br>";
 				}
 			}
 			document.getElementById("chatbox").innerHTML = txt;

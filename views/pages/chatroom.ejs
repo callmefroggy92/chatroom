@@ -28,7 +28,7 @@
 			var msg = document.getElementById('msg').value;
 			var usr = document.getElementById('usr').value;
 			var d = new Date();
-			var str = "msg=" + msg + "&usr=" + usr + "&d=" + d.toString() + "&id=" + document.getElementById("id").innerText;
+			var str = "msg=" + msg + "&usr=" + usr + "&d=" + d.toString() + "&id=test";
 			xhttp.open("POST", "/snd", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send(str);

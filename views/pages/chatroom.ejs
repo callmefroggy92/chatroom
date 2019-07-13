@@ -42,8 +42,10 @@
 					formatChatbox(this.responseText);
 				}
 			};
+			var chatroom_id = "chatroom_id=" + document.getElementById('chatroom_id').value;
 			xhttp.open("POST", "/upd", true);
-			xhttp.send(); 
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send(chatroom_id); 
 		}
 
 		function formatChatbox(messages){

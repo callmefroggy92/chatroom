@@ -47,7 +47,7 @@ app
 	client.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		var sql = "SELECT msg, usr, d FROM messages;";
+		var sql = "SELECT msg, usr, d FROM messages WHERE chatroom_id = " + req.body.chatroom_id;";
 		client.query(sql, function (err, result, fields) {
 			if (err) throw err;
 			res.send(JSON.stringify(result["rows"]));

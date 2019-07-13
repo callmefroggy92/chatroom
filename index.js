@@ -28,7 +28,7 @@ app
 	client.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		var sql = "INSERT INTO messages (msg, usr) VALUES ('" + req.body.msg + "', '" + req.body.usr + "')";
+		var sql = "INSERT INTO messages (msg, usr, d) VALUES ('" + req.body.msg + "', '" + req.body.usr + "', '" + req.body.d + "')";
 		client.query(sql, function (err, result) {
 			if (err) throw err;
 			console.log("Record Successfully Inserted");
@@ -47,7 +47,7 @@ app
 	client.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		var sql = "SELECT msg, usr FROM messages;";
+		var sql = "SELECT msg, usr, d FROM messages;";
 		client.query(sql, function (err, result, fields) {
 			if (err) throw err;
 			res.send(JSON.stringify(result["rows"]));

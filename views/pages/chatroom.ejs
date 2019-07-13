@@ -51,7 +51,7 @@
 			var txt = "";
 			for(var row in msgJSON){
 				if(msgJSON.hasOwnProperty(row)){
-					txt += row.usr + " : " + row.msg + "\n";
+					txt += msgJSON[row].usr + " : " + msgJSON[row].msg + "\n";
 				}
 			}
 			document.getElementById("chatbox").innerHTML = txt;

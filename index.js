@@ -27,7 +27,7 @@ app
 
 	client.connect(function(err) {
 		if (err) throw err;
-		console.log("Connected!");
+		console.log("Storing message for: " + req.body.chatroom_id);
 		var sql = "INSERT INTO messages VALUES ('" + req.body.msg + "', '" + req.body.usr + "', '" + req.body.d + "', '" + req.body.chatroom_id + "')";
 		client.query(sql, function (err, result) {
 			if (err) throw err;

@@ -32,8 +32,6 @@
 			xhttp.open("POST", "/snd", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send(str);
-
-			loadDoc();
 		}
 
 		function loadDoc() {
@@ -61,7 +59,7 @@
 
 </head>
 
-<body onload="loadDoc()">
+<body onload="setInterval(loadDoc(), 3000);">
 
 	<h3>
 		The ID of this Chatroom is:

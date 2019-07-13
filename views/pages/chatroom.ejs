@@ -52,7 +52,7 @@
 			var txt = "";
 			for(var row in msgJSON){
 				if(msgJSON.hasOwnProperty(row)){
-					txt += msgJSON[row].usr + " : " + msgJSON[row].msg + "<br>";
+					txt += msgJSON[row].usr + ", " + msgJSON[row].d + " : " + msgJSON[row].msg + "<br>";
 				}
 			}
 			document.getElementById("chatbox").innerHTML = txt;

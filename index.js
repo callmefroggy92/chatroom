@@ -50,8 +50,8 @@ app
 		var sql = "SELECT msg, usr FROM messages;";
 		client.query(sql, function (err, result, fields) {
 			if (err) throw err;
-			res.send(result);
-			console.log(fields);
+			res.send(JSON.stringify(fields));
+			console.log(JSON.stringify(fields));
 			console.log("Record Successfully Retrieved");
 		});
 	});

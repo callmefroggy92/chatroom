@@ -31,18 +31,30 @@
 			xhttp.open("POST", "/snd", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send(str);
+
+			loadDoc();
 		}
 
 		function loadDoc() {
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("chatbox").innerHTML =
-					this.responseText;
+					formatChatbox(this.responseText);
 				}
 			};
 			xhttp.open("POST", "/upd", true);
 			xhttp.send(); 
+		}
+
+		function formatChatbox(messages){
+			var msgJSON = JSON.parse(messages);
+			var txt = "";
+			for(var row in msgJSON){
+				if(msgJSON.hasOwnProperty(row)){
+					txt += row.usr + " : " + row.msg + "\n";
+				}
+			}
+			document.getElementById("chatbox").innerHTML = txt;
 		}
 	</script>
 

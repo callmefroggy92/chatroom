@@ -28,7 +28,7 @@ app
 	client.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		var sql = "INSERT INTO messages (msg, usr, d) VALUES ('" + req.body.msg + "', '" + req.body.usr + "', '" + req.body.d + "')";
+		var sql = "INSERT INTO messages (msg, usr, d, chatroom_d) VALUES ('" + req.body.msg + "', '" + req.body.usr + "', '" + req.body.d + "', '" + req.body.id + "')";
 		client.query(sql, function (err, result) {
 			if (err) throw err;
 			console.log("Record Successfully Inserted");

@@ -32,6 +32,7 @@ app
 		client.query(sql, function (err, result) {
 			if (err) throw err;
 			console.log("Record Successfully Inserted");
+			client.end();
 		});
 	});
   })

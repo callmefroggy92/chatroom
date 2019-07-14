@@ -54,7 +54,7 @@
 			var txt = "";
 			for(var row in msgJSON){
 				if(msgJSON.hasOwnProperty(row)){
-					txt += msgJSON[row].usr + ", " + msgJSON[row].d + " : " + msgJSON[row].msg + "<br>";
+					txt += msgJSON[row].usr + ", " + msgJSON[row].d + " : " + decode(msgJSON[row].msg) + "<br>";
 				}
 			}
 			document.getElementById("chatbox").innerHTML = txt;
@@ -72,6 +72,21 @@
 			}
 
 			return encoded_msg;
+		}
+
+
+		function decode(msg){
+			var key = document.getElementById('key').value;
+			var decoded_msg = "";
+			var q = 0;
+			for (var i = 0; i < msg.length; i++){
+				decoded_msg += String.fromCharCode(msg.charCodeAt(i) - key.charCodeAt(q));
+				q++;
+				if(q >= key.length)
+					q = 0;
+			}
+
+			return decoded_msg;
 		}
 					
 	</script>

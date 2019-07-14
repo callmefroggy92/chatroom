@@ -65,7 +65,7 @@
 			var encoded_msg = "";
 			var q = 0;
 			for (var i = 0; i < msg.length; i++){
-				msg += String.fromCharCode(msg.charCodeAt(i) + key.charCodeAt(q));
+				encoded_msg += String.fromCharCode(msg.charCodeAt(i) + key.charCodeAt(q));
 				q++;
 				if(q >= key.length)
 					q = 0;

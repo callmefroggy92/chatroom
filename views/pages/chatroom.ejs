@@ -63,7 +63,8 @@
 		function encode(msg){
 			var key = document.getElementById('key').value;
 			var encoded_msg = "";
-			for (var i = 0, var q = 0; i < msg.length; i++){
+			var q = 0;
+			for (var i = 0; i < msg.length; i++){
 				msg += String.fromCharCode(msg.charCodeAt(i) + key.charCodeAt(q));
 				q++;
 				if(q >= key.length)

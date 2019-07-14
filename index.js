@@ -54,6 +54,7 @@ app
 			res.send(JSON.stringify(result["rows"]));
 			console.log(JSON.stringify(result["rows"]));
 			console.log("Record Successfully Retrieved");
+			client.end();
 		});
 	});
   })

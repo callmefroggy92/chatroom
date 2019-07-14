@@ -25,7 +25,7 @@
 				if (this.readyState == 4 && this.status == 200) {
 				}
 			};
-			var msg = document.getElementById('msg').value;
+			var msg = encode(document.getElementById('msg').value);
 			document.getElementById('msg').value = "";
 			var usr = document.getElementById('usr').value;
 			var chatroom_id = document.getElementById('chatroom_id').value;
@@ -59,6 +59,20 @@
 			}
 			document.getElementById("chatbox").innerHTML = txt;
 		}
+
+		function encode(msg){
+			var key = document.getElementById('key').value;
+			var encoded_msg = "";
+			for (var i = 0, var q = 0; i < msg.length; i++){
+				msg += String.fromCharCode(msg.charCodeAt(i) + key.charCodeAt(q));
+				q++;
+				if(q >= key.length)
+					q = 0;
+			}
+
+			return encoded_msg;
+		}
+					
 	</script>
 
 </head>

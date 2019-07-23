@@ -9,11 +9,20 @@
 		}
 
 		#chatbox{
-			width: 40%;
+			width: 80%;
 			height: 50%;
+			max-height:50%;
 			border: 1pt solid black;
 			background-color: white;
 		}
+
+		#main{
+			width: 60%;
+			align: center;
+			height: 100%;
+			background-color:#DDD;
+		}
+						
 	</style>
 
 	<script src="jquery-3.4.1.min.js"></script>
@@ -61,6 +70,8 @@
 		}
 
 		function encode(msg){
+			if(document.getElementById('key').value == "")
+				return msg;
 			var key = document.getElementById('key').value;
 			var encoded_msg = "";
 			var q = 0;
@@ -95,6 +106,8 @@
 
 <body onload="setInterval(loadDoc, 2000);">
 
+	<div id="main">
+
 	<h3>
 		The ID of this Chatroom is: <input type="text" id="chatroom_id" value="<%= chatroom %>" readonly>
 	</h3>
@@ -105,5 +118,6 @@
 	<input type="text" id="usr" placeholder="Your Preferred Username">
 	<button id="send_message" onclick="send_message()"> SEND </button><br>
 	<input type="text" id="key" placeholder="Enter Secret Key Here!">
+	</div>
 </body>
 </html>

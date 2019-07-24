@@ -4,9 +4,14 @@
 
 #content{
 	padding:5%;
-	margin:5%;
+	margin: auto;
 	width:60%;
 	height:100%;
 	background-color:white;
 	border: 1pt solid black;
+}
+
+#safechat{
+	font-style: italic;
+	font-family: Lucida Bright, serif;
 }

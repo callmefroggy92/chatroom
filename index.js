@@ -8,8 +8,8 @@ app.set('view engine', 'ejs');
 const { Client } = require('pg');
 
 
-app
-  .use(express.static(path.join(__dirname, 'public')));
+app  
+  .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))

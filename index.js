@@ -9,7 +9,7 @@ const { Client } = require('pg');
 
 
 app
-  .use(express.static(path.join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname + 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
@@ -35,10 +35,6 @@ app
 			client.end();
 		});
 	});
-  })
-
-  .get('/chatstyle.css', function(req, res){
-	res.send('pages/chatstyle.css');
   })
 
   .post('/upd', function(req, res){

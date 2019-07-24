@@ -37,6 +37,10 @@ app
 	});
   })
 
+  .get('/chatstyle', function(req, res){
+	res.send('pages/chatstyle.css');
+  })
+
   .post('/upd', function(req, res){
 	var messages_string = "emtpy string";
 

@@ -37,7 +37,7 @@ app
 	});
   })
 
-  .get('/chatstyle', function(req, res){
+  .get('/chatstyle.css', function(req, res){
 	res.send('pages/chatstyle.css');
   })
 

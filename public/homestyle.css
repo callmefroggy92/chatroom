@@ -1,0 +1,12 @@
+﻿body{
+	background-color: #CCC;
+}
+
+#content{
+	padding:5%;
+	margin:5%;
+	width:60%;
+	height:100%;
+	background-color:white;
+	border: 1pt solid black;
+}
